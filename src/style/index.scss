@@ -97,6 +97,9 @@
       gap: 8px 20px;
       background: white;
       transform: translate(calc(-100% + 100px), 100%);
+      display: grid;
+
+
 
       p {
         font-weight: 500;
@@ -107,11 +110,14 @@
           color: rgb(15, 199, 45);
         }
       }
+      .hide {
+        display: none;
+      }
     }
   }
 }
 
-main {
+.main {
   margin-top: 70px;
 
   h2 {
@@ -200,3 +206,4 @@ main {
     --cont: 1000px;
   }
 }
+

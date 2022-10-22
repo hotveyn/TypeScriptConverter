@@ -80,6 +80,7 @@
   gap: 8px 20px;
   background: white;
   transform: translate(calc(-100% + 100px), 100%);
+  display: grid;
 }
 .header .currency .currency-menu p {
   font-weight: 500;
@@ -89,15 +90,18 @@
 .header .currency .currency-menu p:hover {
   color: rgb(15, 199, 45);
 }
+.header .currency .currency-menu .hide {
+  display: none;
+}
 
-main {
+.main {
   margin-top: 70px;
 }
-main h2 {
+.main h2 {
   font-size: 30px;
   font-weight: 500;
 }
-main .search {
+.main .search {
   margin-top: 20px;
   max-width: calc(var(--cont) - 25px);
   width: 80%;
@@ -106,12 +110,12 @@ main .search {
   border-radius: 15px;
   border: 1px solid #cdcdcd;
 }
-main .cards {
+.main .cards {
   display: flex;
   flex-wrap: wrap;
   margin: 33px auto;
 }
-main .cards .card {
+.main .cards .card {
   border: 1px solid #cdcdcd;
   border-radius: 13px;
   display: flex;
@@ -125,10 +129,10 @@ main .cards .card {
   transition: box-shadow 0.2s;
   margin: 5px;
 }
-main .cards .card:hover {
+.main .cards .card:hover {
   box-shadow: 0 0 20px rgba(199, 199, 199, 0.507);
 }
-main .cards .card .card__tittle {
+.main .cards .card .card__tittle {
   font-size: 20px;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -137,29 +141,29 @@ main .cards .card .card__tittle {
   line-height: 20px;
   max-width: 180px;
 }
-main .cards .card .change-container {
+.main .cards .card .change-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: auto;
   gap: 3px;
 }
-main .cards .card .change-container .inc {
+.main .cards .card .change-container .inc {
   color: rgb(15, 199, 45);
 }
-main .cards .card .change-container .red {
+.main .cards .card .change-container .red {
   color: rgb(204, 39, 27);
 }
-main .cards .card .change-container .separate {
+.main .cards .card .change-container .separate {
   width: 100%;
   height: 1px;
   background: #cdcdcd;
   margin: 5px 0;
 }
-main .cards .card .change-container .to {
+.main .cards .card .change-container .to {
   font-weight: 500;
 }
-main .cards .hide {
+.main .cards .hide {
   display: none;
 }
 
