@@ -4,7 +4,7 @@ search!.addEventListener('input', () => {
     let cardArr = document.querySelectorAll(".card") ;
     cardArr.forEach((elem=>{
         if (text !== "") {
-                let cardTittle = elem.querySelector<HTMLInputElement>(".card__tittle");
+                let cardTittle = elem.querySelector(".card__tittle") as HTMLInputElement;
                 if (cardTittle!.innerText.toLowerCase().search(text) === -1) {
                     elem.classList.add("hide")
                 } else {
