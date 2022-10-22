@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
 :root {
   --cont: 1400px;
 }
@@ -11,36 +12,82 @@
   font-family: "Roboto", sans-serif;
 }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header img {
+.header img {
   margin: 15px 0;
 }
-header ul {
+.header ul {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
-header ul li {
+.header ul li {
   font-size: 20px;
   list-style: none;
 }
-header a {
+.header a {
   color: black;
   text-decoration: none;
   border-bottom: 2px solid rgb(126, 126, 126);
   transition: color 0.2s;
-  -webkit-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  -ms-transition: color 0.2s;
-  -o-transition: color 0.2s;
 }
-header a:hover {
+.header a:hover {
   color: rgb(15, 199, 45);
   border-color: rgb(15, 199, 45);
+}
+.header .currency {
+  position: relative;
+}
+.header .currency button {
+  padding: 7px 0;
+  width: 100px;
+  font-weight: 600;
+  border: 0 solid;
+  border-radius: 15px;
+  background: rgb(32, 221, 62);
+  background: linear-gradient(90deg, rgb(32, 221, 64) 0%, rgb(233, 45, 32) 100%);
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+}
+.header .currency button:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgb(32, 221, 64) 0%, rgb(233, 45, 32) 100%);
+  transition: opacity 0.3s;
+  filter: blur(10px);
+}
+.header .currency button .currency-name {
+  color: rgb(255, 255, 255);
+}
+.header .currency .currency-menu {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  border-radius: 15px;
+  bottom: -10px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  grid-template-columns: repeat(3, 40px);
+  gap: 8px 20px;
+  background: white;
+  transform: translate(calc(-100% + 100px), 100%);
+}
+.header .currency .currency-menu p {
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.header .currency .currency-menu p:hover {
+  color: rgb(15, 199, 45);
 }
 
 main {
@@ -76,10 +123,6 @@ main .cards .card {
   height: 120px;
   padding: 20px 0;
   transition: box-shadow 0.2s;
-  -webkit-transition: box-shadow 0.2s;
-  -moz-transition: box-shadow 0.2s;
-  -ms-transition: box-shadow 0.2s;
-  -o-transition: box-shadow 0.2s;
   margin: 5px;
 }
 main .cards .card:hover {
@@ -89,8 +132,6 @@ main .cards .card .card__tittle {
   font-size: 20px;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   display: -webkit-box;
   text-align: center;
   margin-bottom: 15px;
@@ -120,14 +161,13 @@ main .cards .card .change-container .to {
   font-weight: 500;
 }
 
-.hide {
-  display: none;
-}
-
 @media only screen and (max-width: 1450px) {
   :root {
     --cont: 1000px;
   }
+}
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */
