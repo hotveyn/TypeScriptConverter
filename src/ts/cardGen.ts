@@ -1,5 +1,5 @@
 (() => {
-    const cards = document.querySelector(".cards");
+    const cardsDiv = document.querySelector(".cards");
 
     type oneOfValutes = {
         ID: string,
@@ -26,9 +26,9 @@
 
         // return element to display on page;
         return `<p class="inc form ${className}" > 
-                ${nominal} ${charCode}
+                ${nominal} <span class="char-code">${charCode}</span> 
                     <span >
-                        (${diffAmount}) ${arrow}
+                        <span class="diffA">(${diffAmount})</span> ${arrow}
                     </span>
                     <div class="separate"></div>
                 </p>`
@@ -42,21 +42,73 @@
                     <p class="card__tittle">${currency.Name}</p>
                     <div class="change-container" >
                             ${CurrencyCardDiff(Number(diff), currency.Nominal, currency.CharCode)}
-                        <p class="to">${currency.Value.toFixed(2)} RUB</p>
+                        <p class=""><span class="currency-value">${currency.Value.toFixed(2)}</span> <span class="current-currency">RUB</span></p>
                     </div>
                 </div>`;
     }
 
     function generateCards(cardsData: JSONWithValutes): void {
         for (let key in cardsData.Valute) {
-            cards!.innerHTML += CurrencyCard(cardsData.Valute[key]);
+            cardsDiv!.innerHTML += CurrencyCard(cardsData.Valute[key]);
         }
+    }
+
+    function changeCurrency(data: any): void {
+
+        const currMenuP = document.querySelectorAll(".currency-menu p");
+        const currButP = document.querySelector(".currency-name")!;
+
+        currMenuP.forEach((menuValutes) => {
+
+            menuValutes.addEventListener("click", function () {
+                currButP!.textContent = menuValutes.textContent;
+                let cards = cardsDiv!.querySelectorAll(".card");
+
+                cards!.forEach(function (card) {
+                    card = card!;
+
+                    let cardCurrency = card.querySelector(".current-currency")!;
+                    let chosenCurrencyText:string = currButP.textContent!;
+                    let currValue = card.querySelector(".currency-value")!;
+                    let charCode = card.querySelector(".char-code")!;
+
+                    if (chosenCurrencyText !== "RUB") {
+
+                        let valueA: number = data.Valute[charCode.textContent!].Value;
+                        let valueB: number = data.Valute[chosenCurrencyText!].Value;
+                        currValue.textContent = (valueA / valueB).toFixed(2);
+
+                        cardCurrency.textContent = chosenCurrencyText;
+                        let previousA: number =
+                            data.Valute[charCode!.textContent!].Previous;
+                        let previousB: number = data.Valute[chosenCurrencyText!].Previous;
+
+
+                        card.querySelector(".diffA")!.textContent = `(${(
+                            Number((valueA / valueB).toFixed(2)) - Number((previousA / previousB).toFixed(2))
+                        ).toFixed(2)})`;
+
+                    } else {
+                        let A: number = data.Valute[charCode.textContent!].Value;
+                        let AOld: number =
+                            data.Valute[card.querySelector(".char-code")!.textContent!].Previous;
+
+                        currValue.textContent = A.toFixed(2);
+                        cardCurrency.textContent = "RUB";
+                        card.querySelector(".diffA")!.textContent = `(${(A - AOld).toFixed(
+                            2
+                        )})`;
+                    }
+                });
+            });
+        });
     }
 
     async function getCurrencies(): Promise<void> {
         const res = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
         const json = await res.json();
         generateCards(json);
+        changeCurrency(json);
     }
 
     getCurrencies();
