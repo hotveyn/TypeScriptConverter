@@ -151,6 +151,7 @@ main {
         box-shadow: 0 0 20px rgba(199, 199, 199, 0.507);
       }
 
+
       .card__tittle {
         font-size: 20px;
         text-overflow: ellipsis;
@@ -188,6 +189,9 @@ main {
         }
       }
     }
+    .hide {
+      display: none;
+    }
   }
 }
 
@@ -195,8 +199,4 @@ main {
   :root {
     --cont: 1000px;
   }
-}
-
-.hide {
-  display: none;
 }
