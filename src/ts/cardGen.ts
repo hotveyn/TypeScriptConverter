@@ -60,12 +60,18 @@
 
         currMenuP.forEach((menuValutes) => {
 
+            // add event that tracks the selected currency in the currency button
+            //         and changes the rate ratio in the currency cards
             menuValutes.addEventListener("click", function () {
                 currButP!.textContent = menuValutes.textContent;
                 let cards = cardsDiv!.querySelectorAll(".card");
 
+                // in each card changes its exchange value to the selected currency
                 cards!.forEach(function (card) {
                     card = card!;
+
+                    // Calculated with formula:
+                    // Rate of A currency to B currency = (Rate of A currency to RUB) / (Rate of B currency to RUB)
 
                     let cardCurrency = card.querySelector(".current-currency")!;
                     let chosenCurrencyText:string = currButP.textContent!;
