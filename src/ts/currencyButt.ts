@@ -7,10 +7,10 @@
 
     currBut!.addEventListener("click", function () {
         if (currMenu!.classList.contains("hide")) {
-            currMenu!.classList.remove("hide");
+            currMenu!.classList.toggle("hide");
             currMenu.setAttribute("style","display: grid;")
         } else {
-            currMenu!.classList.add("hide");
+            currMenu!.classList.toggle("hide");
             currMenu.setAttribute("style","display: none;")
 
         }
