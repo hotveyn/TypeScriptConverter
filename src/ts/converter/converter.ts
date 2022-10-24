@@ -1,16 +1,16 @@
 (() => {
-    type oneOfValutes = {
-        ID: string,
-        NumCode: string,
-        CharCode: string,
-        Nominal: number,
-        Name: string,
-        Value: number,
-        Previous: number
-    }
-    type JSONWithValutes = {
-        Valute: any[]
-    }
+    // type oneOfValutes = {
+    //     ID: string,
+    //     NumCode: string,
+    //     CharCode: string,
+    //     Nominal: number,
+    //     Name: string,
+    //     Value: number,
+    //     Previous: number
+    // }
+    // type JSONWithValutes = {
+    //     Valute: any[]
+    // }
 
     let chosenValuteHave: string = "";
     let chosenValuteWant: string = "";
@@ -62,8 +62,8 @@
 
 
     async function getCurrencies(): Promise<void> {
-        const res = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
-        const json = await res.json();
+        //const res = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
+        //const json = await res.json();
         await chooseValute(haveValutesNode, chosenValuteHave); // For Have block
         await chooseValute(wantValutesNode, chosenValuteWant); // For Want block
         changeValutes();
