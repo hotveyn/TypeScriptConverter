@@ -35,27 +35,36 @@
         })
     }
 
-    function changeValutes(): void {
+    function changeValutes(which:string): void {
         // Valutes that was chosen in currency button will appear in have__valutes block
-        let currencyMenu = document.querySelector(".have__currency-menu")!;
+        let currencyMenu = document.querySelector(`.${which}__currency-menu`)!;
+        let valutesNode = which === "have"? haveValutesNode: wantValutesNode;
         currencyMenu.childNodes.forEach((currP) => {
             currP.addEventListener("click", () => {
-                let haveValuteArr: string[] = Array.from(haveValutesNode).map((a) => a.textContent!.trim());
-                for (let i = haveValuteArr.length - 1; i > 0; i--) {
-                    haveValuteArr[i] = haveValuteArr[i - 1];
+                let ValuteArr: string[] = Array.from(valutesNode).map((a) => a.textContent!.trim());
+                if(!ValuteArr.includes(currP.textContent!.trim())){
+                    for (let i = ValuteArr.length - 1; i > 0; i--) {
+                        ValuteArr[i] = ValuteArr[i - 1];
+                    }
+                    ValuteArr[0] = currP.textContent!.trim();
+
+                    // Change valute_chosen div on first
+                    for (let i = 0; i < valutesNode.length; i++) {
+                        valutesNode[i].textContent = ValuteArr[i];
+                        valutesNode[i].classList.remove("valute_chosen");
+                    }
+                    valutesNode[0].classList.add("valute_chosen")
+                }else{
+                    for (let i = 0; i < valutesNode.length; i++) {
+                        if(valutesNode[i].textContent!.trim() === currP.textContent!.trim()){
+                            valutesNode.forEach((elem)=>{
+                                elem.classList.remove("valute_chosen")
+                            })
+                            valutesNode[i].classList.add("valute_chosen")
+                            break
+                        }
+                    }
                 }
-                haveValuteArr[0] = currP.textContent!.trim();
-
-                // Change valute_chosen div on first
-                for (let i = 0; i < haveValutesNode.length; i++) {
-                    haveValutesNode[i].textContent = haveValuteArr[i];
-                    haveValutesNode[i].classList.remove("valute_chosen");
-                }
-                haveValutesNode[0].classList.add("valute_chosen")
-
-
-
-
             })
         })
     }
@@ -66,7 +75,8 @@
         //const json = await res.json();
         await chooseValute(haveValutesNode, chosenValuteHave); // For Have block
         await chooseValute(wantValutesNode, chosenValuteWant); // For Want block
-        changeValutes();
+        await changeValutes("have");
+        await changeValutes("want");
     }
 
     getCurrencies();
