@@ -41,60 +41,6 @@
   color: rgb(15, 199, 45);
   border-color: rgb(15, 199, 45);
 }
-.header .currency {
-  position: relative;
-}
-.header .currency button {
-  padding: 7px 0;
-  width: 100px;
-  font-weight: 600;
-  border: 0 solid;
-  border-radius: 15px;
-  background: rgb(32, 221, 62);
-  background: linear-gradient(90deg, rgb(32, 221, 64) 0%, rgb(233, 45, 32) 100%);
-  font-family: "Nunito", sans-serif;
-  cursor: pointer;
-}
-.header .currency button:before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, rgb(32, 221, 64) 0%, rgb(233, 45, 32) 100%);
-  transition: opacity 0.3s;
-  filter: blur(10px);
-}
-.header .currency button .currency-name {
-  color: rgb(255, 255, 255);
-}
-.header .currency .currency-menu {
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  border-radius: 15px;
-  bottom: -10px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  grid-template-columns: repeat(3, 40px);
-  gap: 8px 20px;
-  background: white;
-  transform: translate(calc(-100% + 100px), 100%);
-  display: grid;
-}
-.header .currency .currency-menu p {
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.header .currency .currency-menu p:hover {
-  color: rgb(15, 199, 45);
-}
-.header .currency .currency-menu .hide {
-  display: none;
-}
 
 .main .converter {
   width: 90%;
@@ -119,6 +65,12 @@
   display: flex;
   font-size: 20px;
 }
+.main .converter .valutes .have__valute_1, .main .converter .valutes .want__valute_1 {
+  border-radius: 10px 0 0 10px;
+}
+.main .converter .valutes .valute_5 {
+  border-radius: 0 10px 10px 0;
+}
 .main .converter .valutes button {
   border: 1px solid #cecece;
   width: 100px;
@@ -129,12 +81,6 @@
 .main .converter .valutes button:hover {
   background-color: #16b67f;
   color: #fff;
-}
-.main .converter .valutes button:first-child {
-  border-radius: 10px 0 0 10px;
-}
-.main .converter .valutes button:last-child {
-  border-radius: 0 10px 10px 0;
 }
 .main .converter .valutes .valute_active {
   background-color: #16b67f;
