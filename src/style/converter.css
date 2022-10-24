@@ -104,16 +104,16 @@
   transition: 0.1s;
   cursor: pointer;
 }
-.main .converter .valutes button:hover {
+.main .converter .valutes .valute:hover {
   background-color: #16b67f;
   color: #fff;
 }
 .main .converter .valutes .valute_active {
-  background-color: #16b67f;
+  background-color: #53dcb2;
   color: #fff;
 }
 .main .converter .valutes .valute_chosen {
-  background-color: #16b631;
+  background-color: #16b67f;
   color: #fff;
 }
 .main .converter .valutes .want__currency, .main .converter .valutes .have__currency {

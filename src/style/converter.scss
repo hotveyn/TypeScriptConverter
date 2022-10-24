@@ -114,18 +114,19 @@
         background-color: white;
         transition: .1s;
         cursor: pointer;
-        &:hover{
+
+      }
+      .valute:hover{
           background-color: #16b67f;
           color: #fff;
-        }
       }
 
       .valute_active{
-        background-color: #16b67f;
+        background-color: #53dcb2;
         color: #fff;
       }
       .valute_chosen{
-        background-color: #16b631;
+        background-color: #16b67f;
         color: #fff;
       }
       .want__currency, .have__currency{
