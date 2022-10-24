@@ -128,6 +128,16 @@
   margin-top: 20px;
   font-weight: 600;
   font-size: 40px;
+  outline: none;
+  border: none;
+  appearance: none;
+}
+.main .converter .result .number::-webkit-outer-spin-button, .main .converter .result .number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main .converter .result .number[type=number] {
+  -moz-appearance: textfield;
 }
 .main .converter .result .rate {
   margin-top: 10px;
