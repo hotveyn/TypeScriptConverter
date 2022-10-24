@@ -65,10 +65,35 @@
   display: flex;
   font-size: 20px;
 }
+.main .converter .valutes .currency-menu {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  border-radius: 15px;
+  bottom: -10px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  grid-template-columns: repeat(3, 40px);
+  transform: translate(-50%, 100%);
+  gap: 8px 20px;
+  background: white;
+  display: grid;
+}
+.main .converter .valutes .currency-menu p {
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.main .converter .valutes .currency-menu p:hover {
+  color: rgb(15, 199, 45);
+}
+.main .converter .valutes .currency-menu .hide {
+  display: none;
+}
 .main .converter .valutes .have__valute_1, .main .converter .valutes .want__valute_1 {
   border-radius: 10px 0 0 10px;
 }
-.main .converter .valutes .valute_5 {
+.main .converter .valutes .have__valute_5, .main .converter .valutes .want__valute_5 {
   border-radius: 0 10px 10px 0;
 }
 .main .converter .valutes button {
@@ -77,6 +102,7 @@
   height: 70px;
   background-color: white;
   transition: 0.1s;
+  cursor: pointer;
 }
 .main .converter .valutes button:hover {
   background-color: #16b67f;
@@ -85,6 +111,13 @@
 .main .converter .valutes .valute_active {
   background-color: #16b67f;
   color: #fff;
+}
+.main .converter .valutes .valute_chosen {
+  background-color: #16b631;
+  color: #fff;
+}
+.main .converter .valutes .want__currency, .main .converter .valutes .have__currency {
+  position: relative;
 }
 .main .converter .result {
   margin-top: 20px;

@@ -71,11 +71,40 @@
     .valutes{
       display: flex;
       font-size: 20px;
+      .currency-menu {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        border-radius: 15px;
+        bottom: -10px;
+        box-shadow: 0 8px 40px #0003;
+        padding: 20px;
+        grid-template-columns: repeat(3, 40px);
+        transform: translate(-50%,100%);
+        gap: 8px 20px;
+        background: white;
+        display: grid;
+
+
+        p {
+          font-weight: 500;
+          cursor: pointer;
+          transition: color 0.2s;
+
+          &:hover {
+            color: rgb(15, 199, 45);
+          }
+        }
+
+        .hide {
+          display: none;
+        }
+      }
 
       .have__valute_1, .want__valute_1{
         border-radius: 10px 0 0 10px;
       }
-      .valute_5{
+      .have__valute_5, .want__valute_5{
         border-radius: 0 10px 10px 0;
       }
       button{
@@ -84,6 +113,7 @@
         height: 70px;
         background-color: white;
         transition: .1s;
+        cursor: pointer;
         &:hover{
           background-color: #16b67f;
           color: #fff;
@@ -93,6 +123,15 @@
       .valute_active{
         background-color: #16b67f;
         color: #fff;
+      }
+      .valute_chosen{
+        background-color: #16b631;
+        color: #fff;
+      }
+      .want__currency, .have__currency{
+        position: relative;
+
+
       }
     }
     .result{
