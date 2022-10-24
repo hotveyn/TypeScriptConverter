@@ -1,19 +1,27 @@
 (() => {
-    let curr = document.querySelector(".valute_5") as HTMLInputElement;
+    const haveCurr = document.querySelector(".have__currency")!;
+    const haveCurrBut = haveCurr.querySelector(".currency-butt")! as HTMLInputElement;
+    const haveCurrMenu = haveCurr.querySelector(".currency-menu")! as HTMLInputElement;
 
-    let currBut = curr!.querySelector("button") as HTMLInputElement;
+    const wantCurr = document.querySelector(".want__currency")!;
+    const wantCurrBut = wantCurr.querySelector(".currency__button")! as HTMLInputElement;
+    const wantCurrMenu = wantCurr.querySelector(".currency-menu")! as HTMLInputElement;
 
-    let currMenu = curr!.querySelector(".currency-menu") as HTMLInputElement;
+    ShowHide(haveCurrBut, haveCurrMenu);
+    ShowHide(wantCurrBut, wantCurrMenu);
 
-    currBut!.addEventListener("click", function () {
-        if (currMenu!.classList.contains("hide")) {
-            currMenu!.classList.remove("hide");
-            currMenu.setAttribute("style","display: grid;")
-        } else {
-            currMenu!.classList.add("hide");
-            currMenu.setAttribute("style","display: none;")
+    function ShowHide(but: HTMLInputElement, menu: HTMLInputElement) {
+        but!.addEventListener("click", () => {
+            if (menu!.classList.contains("hide")) {
+                menu!.classList.toggle("hide");
+                but.classList.toggle("valute_active");
+                menu.setAttribute("style", "display: grid;")
+            } else {
+                menu!.classList.toggle("hide");
+                but.classList.toggle("valute_active");
+                menu.setAttribute("style", "display: none;")
 
-        }
-
-    });
+            }
+        })
+    }
 })();
