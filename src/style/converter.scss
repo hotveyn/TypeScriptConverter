@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+:root {
+  --cont: 1400px;
+}
+
+.container {
+  max-width: var(--cont);
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  img {
+    margin: 15px 0;
+    width: 15%;
+    min-width: 105px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    li {
+      font-size: 20px;
+      list-style: none;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(126, 126, 126);
+    transition: color 0.2s;
+
+    &:hover {
+      color: rgb(15, 199, 45);
+      border-color: rgb(15, 199, 45);
+    }
+  }
+
+
+
+}
+.main{
+  .converter{
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      width: 90px;
+      cursor: pointer;
+      transition: .2s;
+      &:hover{
+        opacity:0.7;
+      }
+    }
+    h2{
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    .valutes{
+      display: flex;
+      font-size: 20px;
+      .currency-menu {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        border-radius: 15px;
+        bottom: -10px;
+        box-shadow: 0 8px 40px #0003;
+        padding: 20px;
+        grid-template-columns: repeat(3, 40px);
+        transform: translate(-50%,100%);
+        gap: 8px 20px;
+        background: white;
+        display: grid;
+
+
+        p {
+          font-weight: 500;
+          cursor: pointer;
+          transition: color 0.2s;
+
+          &:hover {
+            color: rgb(15, 199, 45);
+          }
+        }
+
+        .hide {
+          display: none;
+        }
+      }
+
+      .have__valute_1, .want__valute_1{
+        border-radius: 10px 0 0 10px;
+      }
+      .have__valute_5, .want__valute_5{
+        border-radius: 0 10px 10px 0;
+      }
+      button{
+        border: 1px solid #cecece;
+        width: 100px;
+        height: 70px;
+        background-color: white;
+        transition: .1s;
+        cursor: pointer;
+
+      }
+      .valute:hover{
+          background-color: #16b67f;
+          color: #fff;
+      }
+
+      .valute_active{
+        background-color: #53dcb2;
+        color: #fff;
+      }
+      .valute_chosen{
+        background-color: #16b67f;
+        color: #fff;
+      }
+      .want__currency, .have__currency{
+        position: relative;
+
+
+      }
+    }
+    .result{
+      margin-top: 20px;
+      border: 1px solid #cecece;
+      padding: 20px ;
+      .number{
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 40px;
+      }
+      .rate{
+        margin-top: 10px;
+        font-weight: 400;
+        color: #808080;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  :root {
+    --cont: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  :root {
+    --cont: 700px;
+  }
+  li:last-child{
+    display: none;
+  }
+}
+

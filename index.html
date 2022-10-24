@@ -17,56 +17,59 @@
 
         <ul>
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Конвертер</a></li>
+            <li><a href="converter.html">Конвертер</a></li>
         </ul>
-        <div class="currency">
-            <button>
-                <p class="currency-name">RUB</p>
-            </button>
-            <div class="currency-menu hide" style="display: none;">
-                <p>AUD</p>
-                <p>AZN</p>
-                <p>GBP</p>
-                <p>AMD</p>
-                <p>BYN</p>
-                <p>BGN</p>
-                <p>BRL</p>
-                <p>HUF</p>
-                <p>HKD</p>
-                <p>DKK</p>
-                <p>USD</p>
-                <p>EUR</p>
-                <p>INR</p>
-                <p>KZT</p>
-                <p>CAD</p>
-                <p>KGS</p>
-                <p>CNY</p>
-                <p>MDL</p>
-                <p>NOK</p>
-                <p>PLN</p>
-                <p>RON</p>
-                <p>XDR</p>
-                <p>SGD</p>
-                <p>TJS</p>
-                <p>TRY</p>
-                <p>TMT</p>
-                <p>UZS</p>
-                <p>UAH</p>
-                <p>CZK</p>
-                <p>SEK</p>
-                <p>CHF</p>
-                <p>ZAR</p>
-                <p>KRW</p>
-                <p>JPY</p>
-                <p>RUB</p>
-            </div>
-        </div>
+
     </header>
 
     <hr/>
 
     <main class="main">
-        <h2>Список всех валют</h2>
+        <div>
+            <h2>Список всех валют</h2>
+            <div class="currency">
+                <button>
+                    <span class="currency-name">RUB</span>
+                </button>
+                <div class="currency-menu hide" style="display: none;">
+                    <p>AUD</p>
+                    <p>AZN</p>
+                    <p>GBP</p>
+                    <p>AMD</p>
+                    <p>BYN</p>
+                    <p>BGN</p>
+                    <p>BRL</p>
+                    <p>HUF</p>
+                    <p>HKD</p>
+                    <p>DKK</p>
+                    <p>USD</p>
+                    <p>EUR</p>
+                    <p>INR</p>
+                    <p>KZT</p>
+                    <p>CAD</p>
+                    <p>KGS</p>
+                    <p>CNY</p>
+                    <p>MDL</p>
+                    <p>NOK</p>
+                    <p>PLN</p>
+                    <p>RON</p>
+                    <p>XDR</p>
+                    <p>SGD</p>
+                    <p>TJS</p>
+                    <p>TRY</p>
+                    <p>TMT</p>
+                    <p>UZS</p>
+                    <p>UAH</p>
+                    <p>CZK</p>
+                    <p>SEK</p>
+                    <p>CHF</p>
+                    <p>ZAR</p>
+                    <p>KRW</p>
+                    <p>JPY</p>
+                    <p>RUB</p>
+                </div>
+            </div>
+        </div>
         <label>
             <input
                     class="search"
@@ -78,15 +81,11 @@
     </main>
 </div>
 
-<script src="src/ts/cardGen.ts" type="module" defer></script>
-<script src="src/ts/liveSearch.ts" type="module" defer></script>
-<script src="src/ts/currencyButt.ts" type="module" ></script>
+<script src="src/ts/index/cardGen.ts" defer></script>
+<script src="src/ts/index/liveSearch.ts" defer></script>
+<script src="src/ts/index/currencyButt.ts" defer></script>
 
 
-<!--<script-->
-<!--        src="https://kit.fontawesome.com/79a092f0cf.ts"-->
-<!--        crossorigin="anonymous"-->
-<!--&gt;</script>-->
 </body>
 </html>
 
