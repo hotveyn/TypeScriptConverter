@@ -41,10 +41,22 @@
   color: rgb(15, 199, 45);
   border-color: rgb(15, 199, 45);
 }
-.header .currency {
+
+.main {
+  margin-top: 70px;
+}
+.main > div {
+  display: flex;
+}
+.main > div h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.main > div .currency {
+  margin-left: 20px;
   position: relative;
 }
-.header .currency button {
+.main > div .currency button {
   padding: 7px 0;
   width: 100px;
   font-weight: 600;
@@ -55,7 +67,7 @@
   font-family: "Nunito", sans-serif;
   cursor: pointer;
 }
-.header .currency button:before {
+.main > div .currency button:before {
   content: "";
   z-index: -1;
   position: absolute;
@@ -67,10 +79,10 @@
   transition: opacity 0.3s;
   filter: blur(10px);
 }
-.header .currency button .currency-name {
+.main > div .currency button .currency-name {
   color: rgb(255, 255, 255);
 }
-.header .currency .currency-menu {
+.main > div .currency .currency-menu {
   position: absolute;
   z-index: 10;
   left: 0;
@@ -84,24 +96,16 @@
   transform: translate(calc(-100% + 100px), 100%);
   display: grid;
 }
-.header .currency .currency-menu p {
+.main > div .currency .currency-menu p {
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s;
 }
-.header .currency .currency-menu p:hover {
+.main > div .currency .currency-menu p:hover {
   color: rgb(15, 199, 45);
 }
-.header .currency .currency-menu .hide {
+.main > div .currency .currency-menu .hide {
   display: none;
-}
-
-.main {
-  margin-top: 70px;
-}
-.main h2 {
-  font-size: 30px;
-  font-weight: 500;
 }
 .main .search {
   margin-top: 20px;

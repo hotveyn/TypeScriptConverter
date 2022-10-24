@@ -17,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
   img {
     margin: 15px 0;
     width: 15%;
@@ -46,85 +47,93 @@
     }
   }
 
-  .currency {
-    position: relative;
 
-    button {
-      padding: 7px 0;
-      width: 100px;
-      font-weight: 600;
-      border: 0 solid;
-      border-radius: 15px;
-      background: rgb(32, 221, 62);
-      background: linear-gradient(
-                      90deg,
-                      rgb(32, 221, 64) 0%,
-                      rgb(233, 45, 32) 100%
-      );
-      font-family: "Nunito", sans-serif;
-      cursor: pointer;
-
-      &:before {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(
-                        90deg,
-                        rgb(32, 221, 64) 0%,
-                        rgb(233, 45, 32) 100%
-        );
-        transition: opacity 0.3s;
-        filter: blur(10px);
-      }
-
-      .currency-name {
-        color: rgb(255, 255, 255);
-      }
-    }
-
-    .currency-menu {
-      position: absolute;
-      z-index: 10;
-      left: 0;
-      border-radius: 15px;
-      bottom: -10px;
-      box-shadow: 0 8px 40px #0003;
-      padding: 20px;
-      grid-template-columns: repeat(3, 40px);
-      gap: 8px 20px;
-      background: white;
-      transform: translate(calc(-100% + 100px), 100%);
-      display: grid;
-
-
-
-      p {
-        font-weight: 500;
-        cursor: pointer;
-        transition: color 0.2s;
-
-        &:hover {
-          color: rgb(15, 199, 45);
-        }
-      }
-      .hide {
-        display: none;
-      }
-    }
-  }
 }
 
 .main {
   margin-top: 70px;
 
-  h2 {
-    font-size: 30px;
-    font-weight: 500;
+  > div {
+    display: flex;
+
+    h2 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .currency {
+      margin-left: 20px;
+      position: relative;
+
+      button {
+        padding: 7px 0;
+        width: 100px;
+        font-weight: 600;
+        border: 0 solid;
+        border-radius: 15px;
+        background: rgb(32, 221, 62);
+        background: linear-gradient(
+                        90deg,
+                        rgb(32, 221, 64) 0%,
+                        rgb(233, 45, 32) 100%
+        );
+        font-family: "Nunito", sans-serif;
+        cursor: pointer;
+
+        &:before {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(
+                          90deg,
+                          rgb(32, 221, 64) 0%,
+                          rgb(233, 45, 32) 100%
+          );
+          transition: opacity 0.3s;
+          filter: blur(10px);
+        }
+
+        .currency-name {
+          color: rgb(255, 255, 255);
+        }
+      }
+
+      .currency-menu {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        border-radius: 15px;
+        bottom: -10px;
+        box-shadow: 0 8px 40px #0003;
+        padding: 20px;
+        grid-template-columns: repeat(3, 40px);
+        gap: 8px 20px;
+        background: white;
+        transform: translate(calc(-100% + 100px), 100%);
+        display: grid;
+
+
+        p {
+          font-weight: 500;
+          cursor: pointer;
+          transition: color 0.2s;
+
+          &:hover {
+            color: rgb(15, 199, 45);
+          }
+        }
+
+        .hide {
+          display: none;
+        }
+      }
+    }
   }
+
 
   .search {
     margin-top: 20px;
@@ -154,6 +163,7 @@
       padding: 20px 0;
       transition: box-shadow 0.2s;
       margin: 5px;
+
       &:hover {
         box-shadow: 0 0 20px rgba(199, 199, 199, 0.507);
       }
@@ -199,6 +209,7 @@
         }
       }
     }
+
     .hide {
       display: none;
     }
@@ -215,7 +226,7 @@
   :root {
     --cont: 700px;
   }
-  li:last-child{
+  li:last-child {
     display: none;
   }
 }
